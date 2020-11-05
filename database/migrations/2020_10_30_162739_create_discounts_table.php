@@ -17,6 +17,8 @@ class CreateDiscountsTable extends Migration
             $table->id();
             $table->string('code');
             $table->integer('price');
+            $table->date('start_day');
+            $table->date('finish_day');
             $table->timestamps();
         });
     }

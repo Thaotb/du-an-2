@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryPackagesTable extends Migration
+class CreateTypePackagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateCategoryPackagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_packages', function (Blueprint $table) {
+        Schema::create('TypePackages', function (Blueprint $table) {
             $table->id();
-            $table->string('categoryPackage_name');
+            $table->string('TypePackage_name');
+            $table->double('price');
+            $table->double('price_sale')->nullable();
+            $table->integer('subject_id');
+            $table->string('description');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ class CreateCategoryPackagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_packages');
+        Schema::dropIfExists('TypePackages');
     }
 }
