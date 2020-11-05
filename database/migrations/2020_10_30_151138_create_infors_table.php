@@ -20,13 +20,15 @@ class CreateInforsTable extends Migration
             $table->string('gender', 50);
             $table->string('address');
             $table->integer('phone');
-            $table->string('avatar', 191);
+            $table->string('google_id')->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('avatar_original')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->integer('status');
             $table->string('password');
-            $table->integer('role_id');
+            $table->integer('role');
             $table->timestamps();
         });
     }
