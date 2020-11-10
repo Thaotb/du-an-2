@@ -8,4 +8,12 @@ class Schedule extends Model
 {
     protected $table = 'schedules';
     protected $fillable = ['pt_id','time_id','date'];
+    public function pt()
+    {
+        return $this->belongsTo(Pt::class,'pt_id','id');
+    }
+    public function time()
+    {
+        return $this->belongsTo(Time::class,'time_id','id');
+    }
 }
